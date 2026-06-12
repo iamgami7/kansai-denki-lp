@@ -3,3 +3,6 @@ _archive_scratch/
 wireframe.md
 keyword-research.md
 image-prompts.md
+
+# Local Netlify folder
+.netlify

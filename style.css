@@ -4475,7 +4475,10 @@ html body .page-main .inner-wrap{width:auto !important;max-width:1200px !importa
    ============================================================ */
 .hero-stage{background:#FF9E0F;}
 .hero-d{position:relative;background:#FF9E0F url(assets/hero-bg.webp) right center/cover no-repeat;overflow:hidden;}
-.hero-d__inner{position:relative;max-width:1180px;margin:0 auto;padding:46px 24px 0;display:grid;grid-template-columns:1.02fr .98fr;align-items:end;gap:10px;min-height:420px;}
+/* 左テキスト側にオレンジを足してコントラスト確保（右の人物・稲妻側は明るいまま） */
+.hero-d::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(102deg,rgba(238,116,8,.92) 0%,rgba(243,140,22,.5) 32%,rgba(255,180,30,0) 56%);}
+.hero-d__inner{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:46px 24px 0;display:grid;grid-template-columns:1.02fr .98fr;align-items:end;gap:10px;min-height:420px;}
 .hero-d__copy{position:relative;z-index:3;align-self:center;padding-bottom:22px;}
 .hero-d__photo{position:relative;z-index:2;align-self:end;}
 .hero-d__photo img{display:block;width:100%;max-width:720px;height:auto;margin:0 0 -2px auto;filter:drop-shadow(0 8px 18px rgba(120,60,0,.22));}
@@ -4517,6 +4520,8 @@ html body .page-main .inner-wrap{width:auto !important;max-width:1200px !importa
 .hero-d__tel-body small{display:block;font-size:11px;font-weight:700;color:#cfe0ff;margin-top:2px;}
 
 @media (max-width:900px){
+  /* SPは左テキストが幅広いのでオレンジを広め・濃いめに */
+  .hero-d::before{background:linear-gradient(108deg,rgba(234,110,5,.96) 0%,rgba(239,126,12,.82) 42%,rgba(248,160,24,.3) 68%,rgba(255,190,40,0) 86%);}
   /* 人物は右側の専用ゾーンに連続した1人の図として配置（左テキストと干渉させない） */
   .hero-d__inner{display:block;position:relative;padding:22px 16px 18px;min-height:0;}
   .hero-d__copy{align-self:auto;position:relative;z-index:3;padding-bottom:0;}
